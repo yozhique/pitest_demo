@@ -62,6 +62,11 @@
 						<version>1.1.0</version>
 					</dependency>
 				</dependencies>
+				<configuration>
+					<excludedClasses>
+						com.countryapi.countryapi.models*
+					</excludedClasses>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

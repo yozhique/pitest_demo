@@ -41,10 +41,9 @@ public class CountryService {
     public List<Country> getCountriesTopTenByDensity() {
         return restService.getCountries().stream()
                 .filter(country -> country.getArea() != null && country.getPopulation() != null)
-                .sorted(Comparator.comparing((Country c) -> c.getPopulation() / c.getArea()).reversed())
+                .sorted(Comparator.comparingDouble(Utils::getDensity).reversed())
                 .limit(10)
                 .collect(toList());
     }
-
 
 }
